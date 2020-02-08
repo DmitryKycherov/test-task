@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<script>
+    'use strict';
+
+    let x = prompt("Введите x", "");
+    if (isNaN(x) || !x) {
+        alert("Некорректный ввод");
+    } else {
+        let n = prompt("Введите n", "");
+        if (isNaN(n) || !n) {
+            alert("Некорректный ввод");
+        } else {
+
+            function nod(x, n) {
+                if (n == 0) {
+                    return x;
+                } else {
+                    return nod(n, x % n);
+                }
+            }
+
+            function nok(x, n) {
+                return (x * n) / nod(x, n);
+            }
+
+            alert(" НОД равняется: " + nod(x, n));
+            alert(" НОК равняется: " + nok(x, n));
+        }
+    }
+</script>

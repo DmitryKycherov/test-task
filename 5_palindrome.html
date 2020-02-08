@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<script>
+    'use strict';
+
+    let str = prompt("Введите слово которое хотите проверить на полиндромность", "");
+    if (!str) {
+        alert("Ввод пустой");
+    } else {
+
+        function isPalindrome(str) {
+            let strReverse = str.split('').reverse().join('');
+            let result = '';
+            if (strReverse.toLowerCase() == str.toLowerCase()) {
+                result = "It is a Palindrome";
+            } else {
+                result = "It is not a Palindrome";
+            }
+            return result;
+        }
+
+        alert(isPalindrome(str));
+    }
+</script>
