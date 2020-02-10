@@ -1,23 +1,21 @@
 <!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <script>
     'use strict';
 
     let str = prompt("Введите слово которое хотите проверить на полиндромность", "");
+    function isPalindrome(str) {
+       return  str.split("").reverse().join("");
+       // Если параметр равен пустой строке, строка str будет преобразована в массив символов.
+    }
     if (!str) {
         alert("Ввод пустой");
     } else {
-
-        function isPalindrome(str) {
-            let strReverse = str.split('').reverse().join('');
-            let result = '';
-            if (strReverse.toLowerCase() == str.toLowerCase()) {
-                result = "It is a Palindrome";
-            } else {
-                result = "It is not a Palindrome";
-            }
-            return result;
+        if (str.toLowerCase() == isPalindrome(str).toLowerCase()){
+            // приводим к toLowerCase() Ведь Топот!=топоТ
+            alert("Слово палиндром");
+        } else {
+            alert("Слово не палиндром");
         }
-
-        alert(isPalindrome(str));
     }
 </script>

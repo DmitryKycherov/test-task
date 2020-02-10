@@ -1,33 +1,28 @@
 <!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <script>
     'use strict';
 
     let n = prompt("Введите n", "");
+    let fibArr = new Array();
+    function fib(current, prev) {
+        if (current >= n) {
+            return current;
+        } else {
+            fibArr.push(current);
+            fib(current + prev, current);
+        }
+    }
+
     if (isNaN(n) || !n || n == 0 || n == 1) {
         alert("Введите корректные данные!")
     } else {
+        fib(1, 0);
 
-        let a = 0;
-        let b = 1;
-        let x;
-        let fibArr = [a, b];
 
-        function fib(x) {
 
-            x = a + b;
-            a = b;
-            b = x;
-            if (a + b <= n) {
-                fibArr.push(x)
-                return fib(x);
-            } else {
-                fibArr.push(x)
-                return x;
-            }
-        }
-
-        fib(x);
         alert("Числа фибоначи до числа: " + fibArr);
     }
 
-</script>   
+</script>
+
