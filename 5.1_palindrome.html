@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script>
+    'use strict';
+
+    let str = prompt("Введите слово которое хотите проверить на полиндромность", "").toLowerCase();
+
+    function isPalindrome(str) {
+        for (let i = 0; i < str.length / 2; i++) {
+            if (str[i] !== str[str.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if (!str) {
+        alert("Ввод пустой");
+    } else {
+        if (isPalindrome(str)) {
+            alert("Слово палиндром");
+        } else {
+            alert("Слово не палиндром");
+        }
+    }
+</script>
